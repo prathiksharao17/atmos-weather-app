@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f7ff">
+    <meta name="description" content="Atmos — your personal weather dashboard with live weather and a 5-day forecast.">
+
+    <title>Atmos | Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="dashboard">
+
+        <!-- Navigation -->
+        <header class="topbar">
+            <a class="brand" href="#">
+                <span class="brand-icon">☀</span>
+                <span>Atmos</span>
+            </a>
+
+            <span class="live-badge">
+                <span class="live-dot"></span>
+                LIVE WEATHER
+            </span>
+        </header>
+
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+
+            <h1>Good day, wherever you are.</h1>
+
+            <p class="welcome-text">
+                Here's what's happening outside.
+            </p>
+        </section>
+
+
+        <!-- City Search -->
+        <section class="search-section">
+            <form id="search-form" class="search-bar">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Search for a city..."
+                    aria-label="Enter city name"
+                    autocomplete="off"
+                    required
+                />
+
+                <button type="submit" aria-label="Search weather">
+                    Search
+                </button>
+            </form>
+
+            <!-- Automatic Location -->
+            <button
+                type="button"
+                id="location-button"
+                class="location-button"
+            >
+                <span aria-hidden="true">◎</span>
+                Use my current location
+            </button>
+
+            <!-- Search and Location Messages -->
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+
+        <!-- Main Weather Card -->
+        <section class="weather-card weather-clear" id="weather-card">
+
+            <div class="weather-main">
+
+                <!-- Location -->
+                <div class="location">
+                    <span class="location-pin" aria-hidden="true">⌖</span>
+
+                    <h2 id="city">Bengaluru, India</h2>
+                </div>
+
+                <!-- Weather Condition -->
+                <p id="status" class="condition">
+                    Fetching weather...
+                </p>
+
+                <!-- Temperature and Unit Toggle -->
+                <div class="temperature-row">
+                    <div class="temperature" id="temperature">--°</div>
+
+                    <div class="unit-toggle" role="group" aria-label="Temperature unit">
+                        <button
+                            type="button"
+                            id="celsius-button"
+                            class="unit-button active"
+                            aria-pressed="true"
+                        >
+                            °C
+                        </button>
+
+                        <button
+                            type="button"
+                            id="fahrenheit-button"
+                            class="unit-button"
+                            aria-pressed="false"
+                        >
+                            °F
+                        </button>
+                    </div>
+    </div>
+
+    <p class="unit" id="temperature-unit">CELSIUS</p>
+
+            </div>
+
+
+            <!-- Decorative Weather Illustration -->
+            <div class="weather-art" aria-hidden="true">
+                <div class="sun"></div>
+                <div class="cloud cloud-back"></div>
+                <div class="cloud cloud-front"></div>
+            </div>
+
+
+            <!-- Weather Card Footer -->
+            <div class="card-footer">
+                <span>Current conditions</span>
+                <span class="weather-symbol" aria-hidden="true">✦</span>
+            </div>
+
+        </section>
+
+
+        <!-- Weather Details -->
+        <section class="details-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">WEATHER DETAILS</p>
+                    <h2>Today's overview</h2>
+                </div>
+
+                <span class="detail-date">LIVE DATA</span>
+            </div>
+
+
+            <!-- Humidity and Wind -->
+            <div class="details-grid">
+
+                <!-- Humidity -->
+                <article class="detail-card">
+                    <div class="detail-icon humidity-icon" aria-hidden="true">
+                        ◉
+                    </div>
+
+                    <p>Humidity</p>
+
+                    <strong id="humidity">--%</strong>
+
+                    <span class="detail-note">
+                        Relative humidity
+                    </span>
+                </article>
+
+
+                <!-- Wind Speed -->
+                <article class="detail-card">
+                    <div class="detail-icon wind-icon" aria-hidden="true">
+                        ≋
+                    </div>
+
+                    <p>Wind speed</p>
+
+                    <strong id="wind">-- km/h</strong>
+
+                    <span class="detail-note">
+                        Current wind
+                    </span>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- 5-Day Forecast -->
+        <section class="forecast-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE DAYS AHEAD</p>
+                    <h2>5-day forecast</h2>
+                </div>
+
+                <span class="detail-date">DAILY OUTLOOK</span>
+            </div>
+
+
+            <!-- Forecast Cards are added by JavaScript -->
+            <div
+                id="forecast"
+                class="forecast-grid"
+                aria-live="polite"
+                aria-label="Five-day weather forecast"
+            >
+                <p class="forecast-loading">
+                    Your forecast will appear here...
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <span>Atmos Weather</span>
+
+            <span>
+                Powered by
+                <a
+                    href="https://open-meteo.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open-Meteo
+                </a>
+            </span>
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
