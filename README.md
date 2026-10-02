@@ -6,6 +6,8 @@ Atmos is a weather application I’m building as part of a personal learning spr
 
 The project currently lets a user search for a city or use their current location, view current weather conditions, and see a five-day forecast. Along the way, I’m using Atmos to strengthen my understanding of **REST APIs, asynchronous JavaScript, JSON, geocoding, browser geolocation, error handling, and backend system design concepts**.
 
+Website: https://prathiksharao17.github.io/atmos-weather-app/
+
 
 
 ## 🎯 Why I’m Building This
